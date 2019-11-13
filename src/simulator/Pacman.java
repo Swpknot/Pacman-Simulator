@@ -38,6 +38,7 @@ public class Pacman {
     	}
     }
     
+    // Place the pacman if is not the first time
     public void Place(int coordX, int coordY, String direction) {
     	
     	if(coordX >= 0 && coordX <= Params.GRID_COL - 1 && 
@@ -56,6 +57,7 @@ public class Pacman {
     	}
     }
     
+    // Pacman moves towards the direction
     public void Move() {
     	
     	if(this.direction == Params.Direction.NORTH && this.coordY < Params.GRID_ROW  - 1) {
@@ -76,6 +78,7 @@ public class Pacman {
     	
     }
     
+    // Pacman turns to left
     public void TurnLeft() {
     	
     	if(this.direction == Params.Direction.NORTH) {
@@ -96,6 +99,7 @@ public class Pacman {
     	
     }
     
+    // Pacman turns to right
     public void TurnRight() {
     	
     	if(this.direction == Params.Direction.NORTH) {
@@ -116,6 +120,7 @@ public class Pacman {
     	
     }
     
+    // Report command and return the output
     public String Report() {
     	
     	String output = String.valueOf(this.coordX) + "," + 

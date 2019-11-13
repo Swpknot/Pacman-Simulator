@@ -17,8 +17,10 @@ import java.util.List;
 
 public class InputReader {
 	
+	// Path to the input file
 	private String inputPath = this.getClass().getResource("/").getPath() + "Files/Input.txt";
 	
+	// Read the input file and return the array list
 	public List<String> inputReader() throws IOException {
 		
 		FileInputStream fileInputStream = null;
