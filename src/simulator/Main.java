@@ -19,16 +19,13 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		
 		InputReader inputReader = new InputReader();
+		OutputGenerator outputGenerator = new OutputGenerator();
 		DataProcessor dataProcessor = new DataProcessor();
 		Pacman pacman = null;
 		
 		List<String> input = inputReader.inputReader();
 		List<String> output = dataProcessor.dataProcessing(input, pacman);
-		
-		for(int outputIndex = 0 ; outputIndex < output.size() ; outputIndex ++) {
-			System.out.println(output.get(outputIndex));
-		}
-
+		outputGenerator.outputWriter(output);
 	}
 
 }

@@ -2,6 +2,8 @@ package simulator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DataProcessor {
 	
@@ -10,14 +12,14 @@ public class DataProcessor {
 		List<String> output = new ArrayList<String>();
 		
 		for(int inputIndex = 0 ; inputIndex < input.size() ; inputIndex ++) {
-			//System.out.println(input.get(index));
+			
 			String line = input.get(inputIndex);
 			String command = line.split(" ")[0];
 			
 			if(command.equals("PLACE")) {
 				
-				int coordX = Integer.parseInt(line.split(" ")[1].split(",")[0]);
-				int coordY = Integer.parseInt(line.split(" ")[1].split(",")[1]);
+				int coordX = coordCheck(line.split(" ")[1].split(",")[0]);
+				int coordY = coordCheck(line.split(" ")[1].split(",")[1]);
 				String direction = line.split(" ")[1].split(",")[2];
 				
 				if(pacman == null) {
@@ -76,6 +78,27 @@ public class DataProcessor {
 		
 		return output;
 		
+	}
+	
+	@SuppressWarnings("finally")
+	public int coordCheck(String coord) {
+
+		int coordInt = -1;
+		try{
+			if(coord.isEmpty()){
+				System.out.println("Coordinate cannnot be empty!");
+			}
+			Pattern pattern = Pattern.compile("[0-9]*");
+			Matcher isNum = pattern.matcher(coord);
+			if( !isNum.matches() ){
+				System.out.println("Coordinate must be a number");
+			}
+			coordInt = Integer.valueOf(coord);
+		}catch(NumberFormatException e){
+			System.out.println("The number exceed the limitation");
+		}finally {
+			return coordInt;
+		}
 	}
 
 }
