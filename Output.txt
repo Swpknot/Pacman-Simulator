@@ -1,1 +1,10 @@
-Output: 2,4,NORTH
+Output: 0,0,SOUTH
+Output: 0,0,SOUTH
+Output: 0,0,WEST
+Output: 0,0,WEST
+Output: 4,4,NORTH
+Output: 4,4,NORTH
+Output: 4,4,EAST
+Output: 4,4,EAST
+Output: 4,4,SOUTH
+Output: 4,3,SOUTH
