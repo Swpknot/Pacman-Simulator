@@ -30,6 +30,21 @@ public class Pacman {
 	    
     }
     
+    // Get the x-coordinate of the pacman
+    public int getCoordX() {
+    	return this.coordX;
+    }
+    
+	// Get the y-coordinate of the pacman
+    public int getCoordY() {
+    	return this.coordY;
+    }
+    
+    // Get the direction of the pacman
+    public Params.Direction getDirection() {
+    	return this.direction;
+    }
+    
     // Place the pacman if is not the first time
     public void Place(int coordX, int coordY, String direction) {
     	

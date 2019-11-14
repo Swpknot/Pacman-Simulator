@@ -78,7 +78,9 @@ public class DataProcessor {
 				if(pacman == null) {
 					System.out.println("No Pacman has not been placed!");
 				}else {
-					output.add(pacman.Report());
+					String outputLine = "Output: " + pacman.Report();
+					output.add(outputLine);
+					System.out.println(outputLine);
 				}
 				
 			}else {
@@ -105,7 +107,7 @@ public class DataProcessor {
 			Pattern pattern = Pattern.compile("[0-9]*");
 			Matcher isNum = pattern.matcher(coord);
 			if( !isNum.matches() ){
-				System.out.println("Coordinate must be a number");
+				System.out.println("Coordinate must be a positive number");
 			}
 			// Transfer the coordinate to integer
 			coordInt = Integer.valueOf(coord);
