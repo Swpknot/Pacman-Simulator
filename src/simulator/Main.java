@@ -13,16 +13,20 @@ public class Main {
 	
 	/**
 	 * The Main procedure of the model
-	 * @throws IOException 
+	 * @throws IOException 1   
 	 */
 
 	public static void main(String[] args) throws IOException {
 		
 		InputReader inputReader = new InputReader();
-		List<String> input = inputReader.inputReader();
+		DataProcessor dataProcessor = new DataProcessor();
+		Pacman pacman = null;
 		
-		for(int i = 0; i < input.size() ; i ++) {
-			System.out.println(input.get(i));
+		List<String> input = inputReader.inputReader();
+		List<String> output = dataProcessor.dataProcessing(input, pacman);
+		
+		for(int outputIndex = 0 ; outputIndex < output.size() ; outputIndex ++) {
+			System.out.println(output.get(outputIndex));
 		}
 
 	}

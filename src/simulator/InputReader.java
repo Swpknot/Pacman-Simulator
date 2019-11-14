@@ -37,7 +37,7 @@ public class InputReader {
 
         while ((line = bufferedReader.readLine()) != null) {
         	input.add(line);
-        	System.out.println(line);
+        	//System.out.println(line);
         }
 
         fileInputStream.close();

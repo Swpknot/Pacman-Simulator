@@ -23,19 +23,11 @@ public class Pacman {
 	// Constructor of the daisy
     public Pacman(int coordX, int coordY, String direction) {
     	
-    	if(coordX >= 0 && coordX <= Params.GRID_COL - 1 && 
-    	   coordY >= 0 && coordY <= Params.GRID_ROW  - 1 &&
-    	   (direction.equals("NORTH") || direction.equals("SOUTH") ||
-    	    direction.equals("EAST") || direction.equals("WEST"))) {
-    		
-    		Params.Direction directionEnum = Params.Direction.valueOf(direction);
-    	    this.coordX = coordX;
-    	    this.coordY = coordY;
-    	    this.direction = directionEnum;
-    	}
-    	else {
-    		System.out.println("Invalid Place!");
-    	}
+    	Params.Direction directionEnum = Params.Direction.valueOf(direction);
+	    this.coordX = coordX;
+	    this.coordY = coordY;
+	    this.direction = directionEnum;
+	    
     }
     
     // Place the pacman if is not the first time
@@ -51,9 +43,8 @@ public class Pacman {
             this.coordY = coordY;
             this.direction = directionEnum;
     		
-    	}
-    	else {
-    		System.out.println("Invalid Place!");
+    	}else {
+    		System.out.println("Invalid place coordinate or direction!");
     	}
     }
     
@@ -62,17 +53,13 @@ public class Pacman {
     	
     	if(this.direction == Params.Direction.NORTH && this.coordY < Params.GRID_ROW  - 1) {
     		this.coordY += 1;
-    	}
-    	else if(this.direction == Params.Direction.SOUTH && this.coordY > 0) {
+    	}else if(this.direction == Params.Direction.SOUTH && this.coordY > 0) {
     		this.coordY -= 1;
-    	}
-    	else if(this.direction == Params.Direction.EAST && this.coordX < Params.GRID_COL  - 1) {
+    	}else if(this.direction == Params.Direction.EAST && this.coordX < Params.GRID_COL  - 1) {
     		this.coordX += 1;
-    	}
-    	else if(this.direction == Params.Direction.WEST && this.coordX > 0) {
+    	}else if(this.direction == Params.Direction.WEST && this.coordX > 0) {
     		this.coordX -= 1;
-    	}
-    	else {
+    	}else {
     		System.out.println("Invalid Movement!");
     	}
     	
@@ -83,17 +70,13 @@ public class Pacman {
     	
     	if(this.direction == Params.Direction.NORTH) {
     		this.direction = Params.Direction.WEST;
-    	}
-    	else if(this.direction == Params.Direction.SOUTH) {
+    	}else if(this.direction == Params.Direction.SOUTH) {
     		this.direction = Params.Direction.EAST;
-    	}
-    	else if(this.direction == Params.Direction.EAST) {
+    	}else if(this.direction == Params.Direction.EAST) {
     		this.direction = Params.Direction.NORTH;
-    	}
-    	else if(this.direction == Params.Direction.WEST) {
+    	}else if(this.direction == Params.Direction.WEST) {
     		this.direction = Params.Direction.SOUTH;
-    	}
-    	else {
+    	}else {
     		System.out.println("Invalid Direction and Cannot Turn Left!");
     	}
     	
@@ -104,17 +87,13 @@ public class Pacman {
     	
     	if(this.direction == Params.Direction.NORTH) {
     		this.direction = Params.Direction.EAST;
-    	}
-    	else if(this.direction == Params.Direction.SOUTH) {
+    	}else if(this.direction == Params.Direction.SOUTH) {
     		this.direction = Params.Direction.WEST;
-    	}
-    	else if(this.direction == Params.Direction.EAST) {
+    	}else if(this.direction == Params.Direction.EAST) {
     		this.direction = Params.Direction.SOUTH;
-    	}
-    	else if(this.direction == Params.Direction.WEST) {
+    	}else if(this.direction == Params.Direction.WEST) {
     		this.direction = Params.Direction.NORTH;
-    	}
-    	else {
+    	}else {
     		System.out.println("Invalid Direction and Cannot Turn Right!");
     	}
     	
@@ -124,7 +103,7 @@ public class Pacman {
     public String Report() {
     	
     	String output = String.valueOf(this.coordX) + "," + 
-    					String.valueOf(this.coordX) + "," + 
+    					String.valueOf(this.coordY) + "," + 
     					this.direction.toString();
     	return output;
     	
