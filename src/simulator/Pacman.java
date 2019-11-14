@@ -44,7 +44,7 @@ public class Pacman {
             this.direction = directionEnum;
     		
     	}else {
-    		System.out.println("Invalid place coordinate or direction!");
+    		System.out.println("Invalid coordinate or direction!");
     	}
     }
     
