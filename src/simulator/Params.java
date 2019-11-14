@@ -21,13 +21,4 @@ public class Params {
 	    EAST,
 	    WEST
 	}
-	
-	// The legal commands
-	enum Command {
-		PLACE,
-	    LEFT,
-	    RIGHT,
-	    MOVE,
-	    REPORT
-	}
 }

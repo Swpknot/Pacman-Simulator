@@ -28,9 +28,11 @@ public class OutputGenerator {
 		}
 		
         FileOutputStream fileOutputStream = new FileOutputStream(file);
+        
         // Write the output into the file line by line
         for(int outputIndex = 0 ; outputIndex < output.size() ; outputIndex ++) {
-        	fileOutputStream.write((output.get(outputIndex) + "\n").getBytes());
+        	fileOutputStream.write(("Output: " + output.get(outputIndex) + "\n").getBytes());
+        	System.out.println("Output: " + output.get(outputIndex));
 		}
 
         fileOutputStream.close();

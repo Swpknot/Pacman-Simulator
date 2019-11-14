@@ -26,8 +26,10 @@ public class Main {
 		
 		// Read the input
 		List<String> input = inputReader.inputReader();
+		
 		// Pass input and pacman to data processor to get the output
 		List<String> output = dataProcessor.dataProcessing(input, pacman);
+		
 		// Write the output into file
 		outputGenerator.outputWriter(output);
 	}

@@ -24,6 +24,7 @@ public class InputReader {
 	public List<String> inputReader() throws IOException {
 		
 		FileInputStream fileInputStream = null;
+		
 		try {
 			fileInputStream = new FileInputStream(inputPath);
 		} catch (FileNotFoundException e) {
@@ -37,7 +38,6 @@ public class InputReader {
 
         while ((line = bufferedReader.readLine()) != null) {
         	input.add(line);
-        	//System.out.println(line);
         }
 
         fileInputStream.close();

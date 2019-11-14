@@ -21,6 +21,7 @@ public class DataProcessor {
 		for(int inputIndex = 0 ; inputIndex < input.size() ; inputIndex ++) {
 			
 			String line = input.get(inputIndex);
+			System.out.println(line);
 			// Get the input command
 			String command = line.split(" ")[0];
 			
